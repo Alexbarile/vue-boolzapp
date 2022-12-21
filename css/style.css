@@ -25,7 +25,7 @@
     background-color: #cccecc;
 }
 
-/* interfaccia whatsapp */
+/* top bar */
 
 .container-app{
     position: absolute;
@@ -49,12 +49,70 @@
 
 .col-35{
     background-color: yellow;
-    height: 90px;
+    height: 70px;
     width: 40%;
 }
 
 .col-65{
     background-color: black;
-    height: 90px;
+    height: 70px;
     width: 60%;
 }
+
+/* main part */
+
+.wrapper{
+    width: 100%;
+    height: calc(100vh - 70px - 5%);
+    display: flex;
+}
+
+/* aside */
+
+aside{
+    width: 40%;
+    height: calc(100vh - 70px - 5%);
+    background-color: green;
+    
+}
+
+.nav-top{
+    width: 100%;
+    height: 75px;
+    background-color: aquamarine;
+}
+
+.search-bar{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(224, 189, 145);
+}
+
+.chat-list{
+    width: 100%;
+    height: calc(100vh - 230px);
+    background-color: orange;
+}
+
+/* main */
+
+main{
+    width: 60%;
+    height: calc(100vh - 70px - 5%);
+    background-color: gray;
+
+}
+
+.main-top{
+    width: 100%;
+    height: 650px;
+    background-color: greenyellow;
+}
+
+.main-bottom{
+    width: 100%;
+    height: calc(100vh - 756px);
+    background-color: blueviolet;
+}
+
+
