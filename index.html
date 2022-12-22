@@ -76,18 +76,20 @@
                                 <i class="fas fa-search"></i>
                                 <input type="text" class="search-input" placeholder="Cerca o inizia una nuova chat" autocomplete="off" v-model="chatSearch" @keyup="search()">
                             </div>
-                            <div class="chat-list row">
-                                <div class="user-icon" v-for="contact in contacts">
+
+                        
+
+                            <div class="chat-list row-column" >
+                                <div class="user-icon justify-beetwen" v-for="contact in contacts">
                                     <img :src="contact.avatar" :alt="contact.name">
                                     <div>
                                         <h4>{{contact.name}}</h4>
-                                        <span class="last-access">{{}}</span>
+                                        <span class="last-access">{{contact.message}}</span>
                                     </div>
-                                </div>
-
-
-                                
-                                
+                                    <div class="chat-time" v-if="contact.messages.length > 0">
+                                        {{contact.messages[contact.messages.length - 1].date}}
+                                    </div>
+                                </div> 
                             </div>
         
                         </nav>
@@ -97,10 +99,15 @@
 
                     <main>
                         <div class="main-top">
+                            <div class="chat">
+                                
+                            </div>
 
                         </div>
                         <div class="main-bottom">
-                            
+                            <i class="far fa-smile"></i>
+                            <input type="text" class="chat-input" placeholder="Scrivi un messaggio." >
+                            <i class="fas fa-microphone"></i>
 
                         </div>
                         
