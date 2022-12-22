@@ -40,10 +40,10 @@
 
                         </div>
                         <div class="col-65 row">
-                            <div class="user-icon" v-for="contact in contacts">
-                                <img :src="contact.avatar" :alt="contact.name">
+                            <div class="user-icon">
+                                <img :src="contacts[chatActive].avatar" :alt="contacts[chatActive].name">
                                 <div>
-                                    <h4>{{contact.name}}</h4>
+                                    <h4>{{contacts[chatActive].name}}</h4>
                                     <span class="last-access">Ultimo accesso oggi alle 12:00</span>
                                 </div>
                             </div>
