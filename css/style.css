@@ -164,14 +164,44 @@ aside{
     width: 100%;
     height: calc(100vh - 230px);
     background-color: #fafafa;
+    overflow-y: scroll;
 }
 
-.row-column{
+.flex{
     display: flex;
     align-items: center;
-    flex-direction: column;
-    width: 100%;
 }
+/* ------------------- */
+
+.contact-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0.5rem 1rem;
+    border-top: 0.1rem solid #e9ebeb;
+    cursor: pointer;
+}
+
+.contact-list-active{
+    background-color: #e9ebeb;
+}
+
+.contact-list img{
+    width: 50px;
+    margin: 10px 10px;
+    background-color: #f2f2f2;
+    border-radius: 100%;
+}
+
+.contact-list .profile-info{
+    align-items: flex-start;
+}
+
+.contact-list .data-sottotitolo{
+    color: #949494;
+} 
+
+/* --------------- */
 
 .chat-selector {
     background-color: #fff;

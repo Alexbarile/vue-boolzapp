@@ -89,17 +89,26 @@
 
                             <!-- LISTA CHAT -->
 
-                            <div class="chat-list row-column" >
-                                <div class="user-icon justify-beetwen" v-for="contact in contacts">
-                                    <img :src="contact.avatar" :alt="contact.name">
-                                    <div>
-                                        <h4>{{contact.name}}</h4>
-                                        <span class="last-access">{{contact.message}}</span>
+                            <div class="chat-list">
+
+                                <div class="contact-list" v-for="(contact, index) in contacts" @click="changeChat(index)" :class="(contatore == index) ? 'contact-list-active' : '' ">
+                                    <div class="flex">
+                                        <img :src="contact.avatar" :alt="contact.name">
+                                        <div>
+                                            <h4>{{contact.name}}</h4>
+                                            <p class="data-sottotitolo">{{ getPreviewMessage(index) }}</p>
+
+                                        </div>
                                     </div>
+                                    
                                     <div class="chat-time" v-if="contact.messages.length > 0">
                                         {{contact.messages[contact.messages.length - 1].date}}
                                     </div>
-                                </div> 
+
+                                </div>
+                                
+
+
                             </div>
         
                         </nav>

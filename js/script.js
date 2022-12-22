@@ -178,5 +178,19 @@ createApp({
             ],
         }
         
-    }
+    },
+    methods: {
+        changeChat(i){
+            this.contatore = i
+        },
+        getPreviewMessage(i){
+            let messages = this.contacts[i].messages;
+            let lastMessage = messages[messages.length - 1].message;
+            if (lastMessage.length > 25) {
+                lastMessage = lastMessage.substring(0, 26) + "...";
+            }
+            return lastMessage;
+        },
+        
+    },
 }).mount('#app')
