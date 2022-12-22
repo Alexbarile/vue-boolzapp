@@ -9,7 +9,7 @@ createApp({
                 name: 'Sofia',
                 avatar: './img/avatar_io.jpg',
             },
-
+            contatore: 0,
             chatActive: 0,
             contacts: [
                 {

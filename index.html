@@ -16,16 +16,19 @@
     <div id="app">
         <header class="container">
 
-            <!-- sfondo -->
+            <!-- SFONDO -->
 
             <div class="top"></div>
             <div class="container-header"></div>
 
-            <!-- top bar -->
+            <!-- TOP BAR -->
 
             <div class="container-app">
                 <div class="top-bar">
                     <div class="row">
+
+                        <!-- TOP BAR SX -->
+
                         <div class="col-35 row">
                             <div class="user-icon">
                                 <img :src="user.avatar" :alt="user.name">
@@ -36,9 +39,10 @@
                                 <i class="fas fa-comment-alt"></i>
                                 <i class="fas fa-ellipsis-v"></i>
                             </div>
-
-
                         </div>
+
+                        <!-- TOP BAR DX -->
+
                         <div class="col-65 row">
                             <div class="user-icon">
                                 <img :src="contacts[chatActive].avatar" :alt="contacts[chatActive].name">
@@ -57,14 +61,17 @@
                     </div>
                 </div>
                 
-                <!-- main part -->
+                <!-- MAIN PART -->
     
                 <div class="wrapper">
 
-                    <!-- aside -->
+                    <!-- ASIDE -->
 
                     <aside>
                         <nav>
+
+                            <!-- NOTIFICHE -->
+
                             <div class="nav-top">
                                 <i class="fas fa-bell-slash"></i>
                                 <div>
@@ -72,12 +79,15 @@
                                     <a href="">Attiva notifiche desktop</a>
                                 </div>
                             </div>
+
+                            <!-- SEARCH BAR -->
+
                             <div class="search-bar">
                                 <i class="fas fa-search"></i>
                                 <input type="text" class="search-input" placeholder="Cerca o inizia una nuova chat" autocomplete="off" v-model="chatSearch" @keyup="search()">
                             </div>
 
-                        
+                            <!-- LISTA CHAT -->
 
                             <div class="chat-list row-column" >
                                 <div class="user-icon justify-beetwen" v-for="contact in contacts">
@@ -95,36 +105,33 @@
                         </nav>
                     </aside>
 
-                    <!-- main -->
+                    <!-- MAIN -->
 
                     <main>
-                        <div class="main-top">
-                            <div class="chat">
-                                
-                            </div>
 
+                        <!-- CHAT -->
+
+                        <div class="main-top">
+                            <div class="container-msg">
+                                <div class="msg sent" v-for="(elem, index) in contacts[contatore].messages" :class="(elem.status === 'sent') ? 'sent' : 'received'">
+                                    <p>{{elem.message}}</p>
+                                    <p class="data">{{elem.date}}</p>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- BARRA PER LA CHAT -->
+
                         <div class="main-bottom">
                             <i class="far fa-smile"></i>
                             <input type="text" class="chat-input" placeholder="Scrivi un messaggio." >
                             <i class="fas fa-microphone"></i>
-
                         </div>
-                        
                     </main>
-
-
-
                 </div>
             </div>
-
-
-
-
-
         </header>
-
-
     </div>
     
 

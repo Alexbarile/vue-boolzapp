@@ -5,7 +5,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
-/* sfondo */
+/* SFONDO */
 
 .container{
     width: 100%;
@@ -25,7 +25,7 @@
     background-color: #cccecc;
 }
 
-/* top bar */
+/* TOP BAR */
 
 .container-app{
     position: absolute;
@@ -45,6 +45,8 @@
     align-items: center;
     justify-content: space-between;
 }
+
+/* TOP BAR SX */
 
 .col-35{
     background-color: #eaeaea;
@@ -74,9 +76,7 @@ h4{
 .last-access, .nav-top a{
     font-size: 12px;
     color: rgb(152, 152, 152);
-
 }
-
 
 .header-icon{
     font-size: 20px;
@@ -89,13 +89,15 @@ h4{
     padding: 10px;
 }
 
+/* TOP BAR DX */
+
 .col-65{
     background-color: #eaeaea;
     height: 70px;
     width: 60%;
 }
 
-/* main part */
+/* MAIN PART */
 
 .wrapper{
     width: 100%;
@@ -103,12 +105,14 @@ h4{
     display: flex;
 }
 
-/* aside */
+/* ASIDE */
 
 aside{
     width: 40%;
     height: calc(100vh - 70px - 5%);    
 }
+
+/* NOTIFICHE */
 
 .nav-top{
     width: 100%;
@@ -127,6 +131,7 @@ aside{
     border-radius: 100%;
 }
 
+/* SEARCH BAR */
 
 .search-bar{
     width: 100%;
@@ -153,6 +158,8 @@ aside{
     color: rgb(183, 183, 183);
 }
 
+/* LISTA CHAT */
+
 .chat-list{
     width: 100%;
     height: calc(100vh - 230px);
@@ -163,34 +170,76 @@ aside{
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 100%;
 }
 
 .chat-selector {
     background-color: #fff;
 }
 
-
-
-
-/* main */
+/* MAIN */
 
 main{
     width: 60%;
     height: calc(100vh - 70px - 5%);
-
 }
+
+/* CHAT */
 
 .main-top{
     width: 100%;
     height: 650px;
     background-color: greenyellow;
+    background-image: url(../img/mine.jpg);
+}
+
+.container-msg{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.msg{
+    font-size: 13px;
+    padding: 10px 0px 15px 10px;
+    border-radius: 10px;
+    width: 40%;
     position: relative;
+    margin-top: 0.5rem;
 }
 
-.chat{
+.sent{
+    align-self: flex-end;
+    background-color: #d5f9ba;
+}
+
+.received{
+    align-self: flex-start;
+    background-color: white;
+}
+
+.data{
     position: absolute;
-
+    font-size: 8px;
+    bottom: 1px;
+    right: 5px;
+    color: rgb(183, 183, 183);
 }
+
+.fa-chevron-down{
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #b1b1b1;
+    cursor: pointer;
+}
+
+.fa-chevron-down:hover{
+    display: block;
+}
+
+/* BARRA PER LA CHAT */
 
 .main-bottom{
     width: 100%;
