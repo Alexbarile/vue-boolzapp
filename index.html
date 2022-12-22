@@ -76,7 +76,17 @@
                                 <i class="fas fa-search"></i>
                                 <input type="text" class="search-input" placeholder="Cerca o inizia una nuova chat" autocomplete="off" v-model="chatSearch" @keyup="search()">
                             </div>
-                            <div class="chat-list">
+                            <div class="chat-list row">
+                                <div class="user-icon" v-for="contact in contacts">
+                                    <img :src="contact.avatar" :alt="contact.name">
+                                    <div>
+                                        <h4>{{contact.name}}</h4>
+                                        <span class="last-access">{{}}</span>
+                                    </div>
+                                </div>
+
+
+                                
                                 
                             </div>
         
