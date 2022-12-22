@@ -28,20 +28,29 @@
                     <div class="row">
                         <div class="col-35 row">
                             <div class="user-icon">
-                                ciao
-
+                                <img :src="user.avatar" :alt="user.name">
+                                <h4>{{user.name}}</h4>
                             </div>
                             <div class="header-icon">
-
+                                <i class="fas fa-circle-notch"></i>
+                                <i class="fas fa-comment-alt"></i>
+                                <i class="fas fa-ellipsis-v"></i>
                             </div>
 
 
                         </div>
                         <div class="col-65 row">
-                            <div class="user-icon">
-
+                            <div class="user-icon" v-for="contact in contacts">
+                                <img :src="contact.avatar" :alt="contact.name">
+                                <div>
+                                    <h4>{{contact.name}}</h4>
+                                    <span class="last-access">Ultimo accesso oggi alle 12:00</span>
+                                </div>
                             </div>
                             <div class="header-icon">
+                                <i class="fas fa-search"></i>
+                                <i class="fas fa-paperclip"></i>
+                                <i class="fas fa-ellipsis-v"></i>
                                 
                             </div>
 

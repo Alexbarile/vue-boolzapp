@@ -54,6 +54,42 @@
     border-right: 0.5px solid gray;
 }
 
+.user-icon{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+.user-icon img {
+    width: 50px;
+    margin: 10px 10px;
+    background-color: #f2f2f2;
+    border-radius: 100%;
+}
+
+h4{
+    font-size: 13px;
+}
+
+.last-access{
+    font-size: 10px;
+    color: rgb(183, 183, 183);
+
+}
+
+
+.header-icon{
+    font-size: 20px;
+    color: rgb(183, 183, 183);
+    display: flex;
+    align-items: center;
+}
+
+.header-icon i{
+    padding: 10px;
+}
+
 .col-65{
     background-color: #eaeaea;
     height: 70px;
