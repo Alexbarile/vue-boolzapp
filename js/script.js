@@ -11,6 +11,9 @@ createApp({
             },
             contatore: 0,
             chatActive: 0,
+            newMessage: '',
+            search: '',
+            dt: luxon.DateTime,
             contacts: [
                 {
                     name: 'Michele',
@@ -176,21 +179,73 @@ createApp({
                 
 
             ],
+            
         }
         
     },
     methods: {
+
+        // per cambiare le chat
+
         changeChat(i){
             this.contatore = i
         },
+
+        // per visualizzare l'ultimo messaggio nella lista di chat
+
         getPreviewMessage(i){
             let messages = this.contacts[i].messages;
             let lastMessage = messages[messages.length - 1].message;
-            if (lastMessage.length > 25) {
-                lastMessage = lastMessage.substring(0, 26) + "...";
+            if (lastMessage.length > 20) {
+                lastMessage = lastMessage.substring(0, 21) + "...";
             }
             return lastMessage;
         },
+
+        // per aggiungere testo nella barra di scrittura con risposta automatica
+
+        addTask(index){ 
+
+            let newDateLuxon = this.dt.now().setLocale('it').toLocaleString(this.dt.DATETIME_SHORT_WITH_SECONDS)
+            console.log(newDateLuxon)
+
+            newObj =
+            {
+                date: newDateLuxon,
+                message: this.newMessage,
+                status: 'sent'
+            },
+
+            this.contacts[index].messages.push(newObj)
+            this.newMessage = ""
+            setTimeout(() => {
+                newObjResponder =
+                {
+                    date: newDateLuxon,
+                    message: 'ok',
+                    status: 'received'
+                },
+                this.contacts[index].messages.push(newObjResponder)
+            },1000)
+        },
+
+        // per ricerca contatto nella lista dellas chat
+
+        // search(){
+        //     let filteredChat;
+        //     if(this.search != ''){
+        //         filteredChat = contacts.filter((elem) => {
+        //             return elem.contacts.toLowerCase().includes(this.search.toLowerCase())
+        //         })
+        //     }
+        //     else{
+        //         filteredChat = this.contacts;
+        //     }
+        //     return filteredChat;
+        // }
         
     },
 }).mount('#app')
+
+
+

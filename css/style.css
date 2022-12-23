@@ -197,15 +197,21 @@ aside{
     align-items: flex-start;
 }
 
-.contact-list .data-sottotitolo{
+.contact-list .data-sottotitolo, .chat-time{
     color: #949494;
 } 
 
+.data-sottotitolo{
+    font-size: 13px;
+}
+
+.chat-time{
+    font-size: 10px;
+}
+
 /* --------------- */
 
-.chat-selector {
-    background-color: #fff;
-}
+
 
 /* MAIN */
 
@@ -221,6 +227,8 @@ main{
     height: 650px;
     background-color: greenyellow;
     background-image: url(../img/mine.jpg);
+    overflow-y: scroll;
+
 }
 
 .container-msg{

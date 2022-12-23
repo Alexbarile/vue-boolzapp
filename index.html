@@ -45,10 +45,10 @@
 
                         <div class="col-65 row">
                             <div class="user-icon">
-                                <img :src="contacts[chatActive].avatar" :alt="contacts[chatActive].name">
+                                <img :src="contacts[contatore].avatar" :alt="contacts[contatore].name">
                                 <div>
-                                    <h4>{{contacts[chatActive].name}}</h4>
-                                    <span class="last-access">Ultimo accesso oggi alle 12:00</span>
+                                    <h4>{{contacts[contatore].name}}</h4>
+                                    <span class="last-access">Ultimo accesso il {{contacts[contatore].messages[contacts[contatore].messages.length-1].date}}</span>
                                 </div>
                             </div>
                             <div class="header-icon">
@@ -84,31 +84,27 @@
 
                             <div class="search-bar">
                                 <i class="fas fa-search"></i>
-                                <input type="text" class="search-input" placeholder="Cerca o inizia una nuova chat" autocomplete="off" v-model="chatSearch" @keyup="search()">
+                                <input type="text" class="search-input" placeholder="Cerca o inizia una nuova chat" v-model="search" @keyup="search">
                             </div>
 
                             <!-- LISTA CHAT -->
 
                             <div class="chat-list">
-
-                                <div class="contact-list" v-for="(contact, index) in contacts" @click="changeChat(index)" :class="(contatore == index) ? 'contact-list-active' : '' ">
-                                    <div class="flex">
-                                        <img :src="contact.avatar" :alt="contact.name">
-                                        <div>
-                                            <h4>{{contact.name}}</h4>
-                                            <p class="data-sottotitolo">{{ getPreviewMessage(index) }}</p>
-
+                                <div v-for="(contact, index) in contacts" >
+                                    <div class="contact-list" @click="changeChat(index)" :class="(contatore == index) ? 'contact-list-active' : '' " v-if="contact.visible">
+                                        <div class="flex ">
+                                            <img :src="contact.avatar" :alt="contact.name">
+                                            <div>
+                                                <h4>{{contact.name}}</h4>
+                                                <p class="data-sottotitolo">{{ getPreviewMessage(index) }}</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="chat-time" v-if="contact.messages.length > 0">
+                                            {{contact.messages[contact.messages.length - 1].date}}
                                         </div>
                                     </div>
-                                    
-                                    <div class="chat-time" v-if="contact.messages.length > 0">
-                                        {{contact.messages[contact.messages.length - 1].date}}
-                                    </div>
-
                                 </div>
-                                
-
-
                             </div>
         
                         </nav>
@@ -134,7 +130,7 @@
 
                         <div class="main-bottom">
                             <i class="far fa-smile"></i>
-                            <input type="text" class="chat-input" placeholder="Scrivi un messaggio." >
+                            <input type="text" class="chat-input" placeholder="Scrivi un messaggio." v-model="newMessage" @keyup.enter="addTask(contatore)">
                             <i class="fas fa-microphone"></i>
                         </div>
                     </main>
@@ -145,7 +141,9 @@
     
 
 
+
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.1.1/luxon.min.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
 </body>
 </html>
